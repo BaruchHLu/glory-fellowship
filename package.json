@@ -1,0 +1,28 @@
+{
+  "name": "glory-fellowship",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaruchHLu/glory-fellowship.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/BaruchHLu/glory-fellowship/issues"
+  },
+  "homepage": "https://github.com/BaruchHLu/glory-fellowship#readme",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^8.2.0"
+  }
+}
