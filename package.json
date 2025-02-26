@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lerna run start --stream",
+    "build": "lerna run build --stream",
+    "install": "lerna bootstrap"
   },
   "repository": {
     "type": "git",
@@ -21,8 +24,11 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "lerna": "^8.2.0"
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "lerna": "^6.4.1",
+    "prettier": "^3.5.2"
   }
 }
