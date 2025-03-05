@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import ChatContainer from './components/ChatContainer';
 
 const App: React.FC = () => {
     // State to manage the sidebar visibility
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     // Toggle function to open/close sidebar
     const toggleSidebar = () => {

@@ -2,13 +2,13 @@ import React from 'react';
 
 const Footer: React.FC = () => {
     return (
-        <div className="bg-blue-800 text-white p-4 mt-4">
+        <footer className="w-full bg-gray-900 text-white p-4 mt-auto">
             <input
                 type="text"
-                className="w-full p-2 rounded-lg"
                 placeholder="Type a message..."
+                className="w-full bg-gray-800 p-2 rounded text-white outline-none"
             />
-        </div>
+        </footer>
     );
 };
 

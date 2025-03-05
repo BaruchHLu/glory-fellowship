@@ -9,33 +9,23 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
     return (
-        <>
-            {/* Sidebar Toggle Button */}
-            <button
-                className="absolute top-4 left-4 z-50 bg-gray-800 text-white p-2 rounded md:block"
-                onClick={toggleSidebar} // Using the toggle function passed as a prop
-            >
-                {isOpen ? (
-                    <X size={24} /> // 'X' icon when sidebar is open
-                ) : (
-                    <Menu size={24} /> // 'Menu' icon when sidebar is closed
+        <motion.aside
+            className="h-screen bg-gray-900 text-white fixed top-0 left-0 transition-all duration-300 flex flex-col"
+            initial={{ width: 256 }}
+            animate={{ width: isOpen ? 256 : 60 }}
+        >
+            {/* Sidebar Header */}
+            <div className="h-16 flex items-center justify-between px-4">
+                {isOpen && (
+                    <span className="text-lg font-semibold">
+                        Glory Fellowship
+                    </span>
                 )}
-            </button>
-
-            <motion.aside
-                className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300`}
-                initial={{ width: 0 }}
-                animate={{ width: isOpen ? 256 : 0 }} // Control the sidebar width
-                exit={{ width: 0 }}
-                style={{ zIndex: 1000 }}
-            >
-                {/* Sidebar content */}
-                <div className="p-4">
-                    <h2 className="text-xl">Glory Fellowship</h2>
-                    <button onClick={toggleSidebar}>Toggle Sidebar</button>
-                </div>
-            </motion.aside>
-        </>
+                <button onClick={toggleSidebar} className="p-2">
+                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+            </div>
+        </motion.aside>
     );
 };
 

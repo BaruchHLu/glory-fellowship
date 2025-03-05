@@ -10,9 +10,10 @@ interface ChatContainerProps {
 const ChatContainer: React.FC<ChatContainerProps> = ({ isSidebarOpen }) => {
     return (
         <motion.main
-            className="flex-1 bg-gray-100 p-4 transition-all duration-300 ease-in-out"
+            className="flex flex-col min-h-screen transition-all duration-300"
             style={{
-                marginLeft: isSidebarOpen ? '256px' : '0', // Adjust width based on sidebar state
+                marginLeft: isSidebarOpen ? 256 : 60,
+                width: isSidebarOpen ? "calc(100% - 256px)" : "calc(100% - 60px)",
             }}
         >
             <Navbar />
