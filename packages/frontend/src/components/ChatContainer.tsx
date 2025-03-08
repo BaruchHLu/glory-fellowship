@@ -9,17 +9,18 @@ interface ChatContainerProps {
 
 const ChatContainer: React.FC<ChatContainerProps> = ({ isSidebarOpen }) => {
     return (
-        <motion.main
+        <motion.div
             className="flex flex-col min-h-screen transition-all duration-300"
-            style={{
-                marginLeft: isSidebarOpen ? 256 : 60,
-                width: isSidebarOpen ? "calc(100% - 256px)" : "calc(100% - 60px)",
+            animate={{
+                marginLeft: isSidebarOpen ? 260 : 60, // Moves the container left
             }}
+            transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+            style={{ width: 'calc(100% - 60px)', overflow: 'hidden' }} // Ensures it doesn’t shrink
         >
             <Navbar />
             <ChatWindow />
             <Footer />
-        </motion.main>
+        </motion.div>
     );
 };
 
